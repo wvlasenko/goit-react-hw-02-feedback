@@ -11,15 +11,7 @@ export default class App extends Component {
         neutral: 0,
         bad: 0,
     };
-    updateProp = type => {
-        this.setState(prevStat => {
-            return {
-                [type]: prevStat[type] + 1,
-            };
-        });
-    };
-
-    updateProp = type => {
+    updateFeedback = type => {
         this.setState(prevStat => {
             return {
                 [type]: prevStat[type] + 1,
@@ -46,7 +38,7 @@ export default class App extends Component {
                 <Section title="Please leave feedback">
                     <FeedbackOptions
                         options={this.state}
-                        onLeaveFeedback={this.updateProp}
+                        onLeaveFeedback={this.updateFeedback}
                     />
                 </Section>
 
